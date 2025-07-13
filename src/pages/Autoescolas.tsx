@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Slider } from '@/components/ui/slider';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
 
 const Autoescolas = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -91,21 +93,7 @@ const Autoescolas = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A+</span>
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                AutoEscola+
-              </h1>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <div className="container mx-auto px-4 py-8">
         {/* Search and Filters */}
@@ -331,9 +319,11 @@ const Autoescolas = () => {
                         </div>
                         
                         <div className="flex gap-3">
-                          <Button variant="outline" size="lg">
-                            Ver Detalhes
-                          </Button>
+                          <Link to={`/autoescola/${autoescola.id}`}>
+                            <Button variant="outline" size="lg">
+                              Ver Detalhes
+                            </Button>
+                          </Link>
                           <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-500">
                             Comprar Pacote
                           </Button>

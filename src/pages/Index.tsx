@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -59,36 +60,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A+</span>
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-                AutoEscola+
-              </h1>
-            </div>
-            
-            <nav className="hidden md:flex items-center space-x-6">
-              <Link to="/autoescolas" className="text-gray-600 hover:text-blue-600 transition-colors">
-                Encontrar Autoescolas
-              </Link>
-              <Link to="/como-funciona" className="text-gray-600 hover:text-blue-600 transition-colors">
-                Como Funciona
-              </Link>
-              <Button variant="outline" size="sm">
-                Entrar
-              </Button>
-              <Button size="sm" className="bg-gradient-to-r from-blue-600 to-green-500">
-                Cadastrar Autoescola
-              </Button>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16">
@@ -248,9 +220,11 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600">
-                    Ver Detalhes
-                  </Button>
+                  <Link to={`/autoescola/${autoescola.id}`}>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600">
+                      Ver Detalhes
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
