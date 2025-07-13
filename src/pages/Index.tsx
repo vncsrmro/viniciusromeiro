@@ -96,10 +96,12 @@ const Index = () => {
                 <option value="10km">10 km</option>
               </select>
               
-              <Button className="h-12 bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600">
-                <Search className="w-5 h-5 mr-2" />
-                Buscar
-              </Button>
+              <Link to="/autoescolas">
+                <Button className="h-12 bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600">
+                  <Search className="w-5 h-5 mr-2" />
+                  Buscar
+                </Button>
+              </Link>
             </div>
             
             {/* Quick Filters */}
@@ -239,9 +241,11 @@ const Index = () => {
           <p className="text-xl mb-8 opacity-90">
             Encontre a autoescola perfeita para você em poucos cliques
           </p>
-          <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-            Começar Agora
-          </Button>
+          <Link to="/autoescolas">
+            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+              Começar Agora
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -264,9 +268,9 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Para Usuários</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Como Funciona</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Preços</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Cashback</a></li>
+                 <li><Link to="/como-funciona" className="hover:text-white transition-colors">Como Funciona</Link></li>
+                 <li><Link to="/autoescolas" className="hover:text-white transition-colors">Preços</Link></li>
+                 <li><Link to="/como-funciona" className="hover:text-white transition-colors">Cashback</Link></li>
               </ul>
             </div>
             
